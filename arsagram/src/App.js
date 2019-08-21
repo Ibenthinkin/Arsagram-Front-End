@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation/Navigation';
-import Signin from './components/Signin/Signin';
-import Register from './components/Register/Register';
-import About from './components/About/About';
+import Navigation from './Components/Navigation/Navigation';
+import Signin from './Components/Signin/Signin';
+import Register from './Components/Register/Register';
+import About from './Components/About/About';
+import ControlBar from './Components/ControlBar/ControlBar';
+import InfoCanvas from './Components/InfoCanvas/InfoCanvas';
+import MainCanvas from './Components/MainCanvas/MainCanvas';
+
 import './App.css';
 
 const initialState = {
+  contentType: 'randomPoetry',
   input: '',
   imageUrl: '',
   route: 'signin',
@@ -32,16 +37,24 @@ export default class App extends Component {
         id: data.id,
         name: data.name,
         email: data.email,
-        entries: data.entries,
+        entries: data.views,
         joined: data.joined
       }
     })
   }
 
-    onInputChange = (event) => {
-      this.setState({
-        input: event.target.value
-      });
+    toggleSlider = () => {
+      const {contentType} = this.state
+        contentType === 'randomPoetry' 
+          ? this.setState({
+            contentType: 'images'
+          })
+            : this.setState({contentType :'randomPoetry'})
+    }
+
+    onSubmit = (event) => {
+      let {id} = event.target
+        id === 'nextButton' ? console.log(id) : console.log(id)
     }
 
   toggleAbout = () => {
@@ -68,13 +81,14 @@ export default class App extends Component {
   }
 
     render() {
-    const { isSignedIn, imageUrl, route, box} = this.state;
+    const { isSignedIn, contentType, route} = this.state;
     let page
       switch(route) {
         case 'home':
           page = <div>
               <MainCanvas/>
-              <ControlBar/>
+              < ControlBar toggleSlider={this.toggleSlider} onSubmit={this.onSubmit}/ >
+              <InfoCanvas/>
           </div>;
           break;
         case 'register':

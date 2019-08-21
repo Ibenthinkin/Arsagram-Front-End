@@ -18,7 +18,7 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}signin`, {
+    fetch('http://localhost:3000/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -42,11 +42,11 @@ class Signin extends React.Component {
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 white ph0 mh0">Sign In</legend>
+              <legend className="f1 fw6 black ph0 mh0">Sign In</legend>
               <div className="mt3">
-                <label className="db fw6 lh-copy white f6" htmlFor="email-address">Email</label>
+                <label className="db fw6 lh-copy black f6" htmlFor="email-address">Email</label>
                 <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="pa2 input-reset ba bg-transparent hover-bg-white hover-black w-100"
                   type="email"
                   name="email-address"
                   id="email-address"
@@ -54,9 +54,9 @@ class Signin extends React.Component {
                 />
               </div>
               <div className="mv3">
-                <label className="db fw6 lh-copy white f6" htmlFor="password">Password</label>
+                <label className="db fw6 lh-copy black f6" htmlFor="password">Password</label>
                 <input
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="b pa2 input-reset ba bg-transparent hover-bg-white hover-black w-100"
                   type="password"
                   name="password"
                   id="password"
@@ -67,13 +67,13 @@ class Signin extends React.Component {
             <div className="">
               <input
                 onClick={this.onSubmitSignIn}
-                className="b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 white dib"
+                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 black dib"
                 type="submit"
                 value="Sign in"
               />
             </div>
             <div className="lh-copy mt3">
-              <p  onClick={() => onRouteChange('register')} className="f6 link dim white db pointer">Register</p>
+              <p  onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">Register</p>
             </div>
           </div>
         </main>
