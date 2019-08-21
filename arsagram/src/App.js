@@ -6,6 +6,8 @@ import About from './Components/About/About';
 import ControlBar from './Components/ControlBar/ControlBar';
 import InfoCanvas from './Components/InfoCanvas/InfoCanvas';
 import MainCanvas from './Components/MainCanvas/MainCanvas';
+import Footer from './Components/Footer/Footer';
+
 
 import './App.css';
 
@@ -109,6 +111,7 @@ export default class App extends Component {
           toggleAbout={this.toggleAbout} 
           />
           {page}
+            <Footer/>>
       </div>
     );
   }
