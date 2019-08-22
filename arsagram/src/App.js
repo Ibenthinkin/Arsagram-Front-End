@@ -15,8 +15,8 @@ const initialState = {
   contentType: 'randomPoetry',
   input: '',
   imageUrl: '',
-  route: 'signin',
-  isSignedIn: false,
+  route: 'home',
+  isSignedIn: true,
   user: {
     id: '',
     name: '',
@@ -111,7 +111,7 @@ export default class App extends Component {
           toggleAbout={this.toggleAbout} 
           />
           {page}
-            <Footer/>>
+            <Footer/>
       </div>
     );
   }

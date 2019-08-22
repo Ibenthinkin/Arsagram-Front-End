@@ -1,11 +1,12 @@
 import React from 'react';
-import buttFace from './buttFace.png'
+import sample from './sample.jpg'
 
 const MainCanvas = () => {
-   return ( 
-        <div className='MainCanvas'>
-            <img src={buttFace} alt='what you lookin at?'/>
-        </div>
-   )}
+    return (
+        <article className="mainCanvas">
+                <img src={sample} alt="what you lookin at?"/>
+        </article>
+    )}
 
 export default MainCanvas
+
